@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case 8 – AI-Enhanced Data Analysis: Critical Thinking and Human–AI Collaboration</title>
+  <style>
+    :root{
+      --blue:#2563eb; --green:#16a34a; --bg:#f8fafc; --text:#0f172a; --card:#ffffff; --muted:#64748b; --border:#e2e8f0; --shadow:0 6px 16px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Segoe UI',Roboto,system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0;line-height:1.6}
+    header{background:linear-gradient(135deg,#dbeafe,#dcfce7);padding:28px 20px;box-shadow:var(--shadow);border-bottom:1px solid var(--border)}
+    header h1{margin:0;font-size:1.9em;color:var(--blue);text-align:center}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .chip{background:#dbeafe;color:var(--blue);padding:4px 10px;border-radius:20px;font-size:.85em}
+
+    /* Layout with sticky left navigation */
+    .app{max-width:1200px;margin:22px auto;padding:0 20px;display:grid;grid-template-columns:260px 1fr;gap:24px}
+    @media (max-width:960px){.app{grid-template-columns:1fr}}
+
+    nav.toc{position:sticky;top:16px;align-self:start;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+    nav.toc h3{margin:0 0 8px 0;font-size:14px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}
+    nav.toc a{display:block;padding:8px 10px;border-radius:8px;color:inherit;text-decoration:none}
+    nav.toc a:hover{background:#eef2ff;color:#1e40af}
+    nav.toc .sep{height:1px;background:var(--border);margin:8px 0}
+
+    main{display:grid;gap:24px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+    h2{color:var(--blue);border-bottom:2px solid var(--blue);padding-bottom:6px;margin-top:0}
+    h3{color:var(--green);margin-top:1.1em}
+
+    /* List spacing */
+    ul,ol{margin-left:1.2em}
+    li::marker{color:var(--blue)}
+
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border:1px solid var(--border);padding:10px;vertical-align:top}
+    th{background:#eff6ff;color:#1e40af;white-space:nowrap}
+    tr:nth-child(even){background:#f9fafb}
+
+    .note{background:#f0fdf4;border-left:5px solid var(--green);padding:10px 14px;margin:14px 0;border-radius:8px}
+
+    /* Blue template box used for all framework/statement examples */
+    .template-box{
+      background:#e0f2fe;
+      border-left:5px solid var(--blue);
+      padding:12px 14px;
+      margin:10px 0 16px 2.3em;  /* consistent indentation */
+      border-radius:8px;
+      font-size:.95em;
+    }
+
+    footer{text-align:center;color:var(--muted);font-size:.9em;padding:26px 0}
+  </style>
+</head>
+<body>
+<header id="top">
+  <h1>Case 8: AI-Enhanced Data Analysis – Critical Thinking and Human–AI Collaboration</h1>
+  <div class="chips">
+    <span class="chip">Undergraduate Level</span>
+    <span class="chip">Data Science Foundations · Statistics</span>
+    <span class="chip">Human Verification &amp; Transparency</span>
+  </div>
+</header>
+
+<div class="app">
+  <!-- Left navigation -->
+  <nav class="toc" aria-label="On this page">
+    <h3>Contents</h3>
+    <a href="#scenario">Scenario Description</a>
+    <a href="#objectives">Learning Objectives</a>
+    <a href="#process">Teaching Activities &amp; Process</a>
+    <a href="#artifacts">Student Artifacts</a>
+    <a href="#scoring">Scoring Method</a>
+    <a href="#faculty">Guidelines for Faculty</a>
+    <a href="#students">Guidelines for Students</a>
+    <a href="#references">References</a>
+    <div class="sep"></div>
+    <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </nav>
+
+  <main>
+    <!-- Scenario -->
+    <section id="scenario">
+      <h2>Scenario Description</h2>
+      <p>In the Data Science Foundations course at North Valley University, students have begun using generative AI tools, such as ChatGPT, to generate code, create visualizations, and perform statistical analyses. Although AI can streamline technical tasks, recent studies show that AI often produces incomplete or superficial analyses, skipping key steps such as assumption checks, outlier detection, or model validation. Students may mistakenly assume that AI-generated results are correct simply because the output looks polished.</p>
+      <p>To address this challenge, the instructor designs a hands-on class session where students intentionally integrate AI into their analytical workflow while learning to critique and verify AI outputs. In this lesson, students work with a real dataset, practice structured prompt-engineering techniques, examine AI-generated results, and identify missing steps or logical gaps. They discover that AI can generate correct code but overlook crucial reasoning steps, confirming their findings. The session models responsible and transparent AI use in data science, emphasizing the continued need for human interpretation, verification, and ethical judgment. Students leave with an AI-integrated mini-analysis that demonstrates both computational and conceptual understanding.</p>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section id="objectives">
+      <h2>Learning Objectives</h2>
+      <p>By the end of this class, students will be able to:</p>
+      <ul>
+        <li>Analyze AI-generated statistical outputs to identify missing steps, incorrect assumptions, or logical errors.</li>
+        <li>Evaluate the validity and completeness of AI-assisted analyses using statistical reasoning.</li>
+        <li>Create an AI-integrated analysis report that includes human interpretation, verification steps, and transparent documentation of AI use.</li>
+      </ul>
+    </section>
+
+    <!-- Teaching Activities -->
+    <section id="process">
+      <h2>Teaching Activities and Process</h2>
+
+      <h3>Phase 1 – Warm-Up Discussion (10 minutes)</h3>
+      <div class="note"><strong>Instructor prompt:</strong> “If AI can run most statistical procedures, what should humans still learn?”</div>
+      <ul>
+        <li><strong>Student task:</strong> Students briefly discuss in groups.</li>
+        <li><strong>Instructor highlights key research findings:</strong>
+          <ul style="list-style-type:disc;margin-top:.4em;margin-left:1.2em;">
+            <li>AI often fails to check assumptions (Schwarz, 2025).</li>
+            <li>AI errors are frequently logical rather than syntactic (Shen et al., 2024).</li>
+            <li>Human reasoning and oversight remain essential.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Phase 2 – Instructor Demonstration: AI vs. Human Workflow (15 minutes)</h3>
+      <div class="note"><strong>Purpose:</strong> Show that AI-generated code may be correct while the underlying analysis is incomplete.</div>
+      <ul>
+        <li><strong>Instructor action:</strong> Upload a dataset to ChatGPT.</li>
+        <li><strong>Live demonstration:</strong> Ask AI to run a regression or ANOVA.</li>
+        <li><strong>Class examination:</strong> Project the output and have students examine it.</li>
+        <li><strong>Guiding questions:</strong>
+          <ul style="list-style-type:disc;margin-top:.4em;margin-left:1.2em;">
+            <li>What steps did AI omit or simplify?</li>
+            <li>Which parts of the output are reliable, and why?</li>
+          </ul>
+        </li>
+        <li><strong>Instructor reinforcement:</strong> AI output can look “complete,” but still miss core reasoning steps.</li>
+      </ul>
+
+      <h3>Phase 3 – Student Group Activity: Prompt Engineering + Comparative Outputs (30 minutes)</h3>
+      <div class="note"><strong>Purpose:</strong> Practice prompt-engineering strategies and compare output quality across groups.</div>
+      <ul>
+        <li><strong>Set-up:</strong> Students are randomly assigned into small groups and receive the same dataset and a central research question (e.g., “Does variable X differ across three groups?”).</li>
+        <li><strong>Group task:</strong> Groups apply different prompt-engineering techniques (Shen et al., 2024), such as:
+          <ul style="list-style-type:disc;margin-top:.4em;margin-left:1.2em;">
+            <li>Breaking tasks into sequential steps</li>
+            <li>Breaking steps into multiple prompts (multi-turn prompting)</li>
+            <li>Adding dataset metadata (general description, format, column names, column descriptions, types, and a specific starter code snippet used to load the dataset)</li>
+            <li>Specifying instructions for required tests or analytic steps</li>
+            <li>Removing irrelevant context</li>
+          </ul>
+        </li>
+        <li><strong>Compare:</strong> Groups run prompts, collect outputs, and compare results on a shared board.</li>
+        <li><strong>Whole-class discussion focuses on:</strong>
+          <ul style="list-style-type:disc;margin-top:.4em;margin-left:1.2em;">
+            <li>Which strategies improved output quality?</li>
+            <li>What assumptions was AI still failing to check?</li>
+            <li>What errors remained consistent across groups?</li>
+          </ul>
+        </li>
+        <li><strong>Outcome:</strong> This activity strengthens analysis and evaluation skills.</li>
+      </ul>
+
+      <h3>Phase 4 – Error-Spotting: Human Oversight Exercise (20 minutes)</h3>
+      <div class="note"><strong>Purpose:</strong> Students learn to spot what AI output misses, even when it looks correct.</div>
+      <ul>
+        <li><strong>Instructor provides:</strong> A flawed AI-generated analysis (e.g., an ANOVA conducted without checking assumptions, reporting significant results without effect size, and drawing confident conclusions without evaluating data quality or model appropriateness).</li>
+        <li><strong>Students answer:</strong>
+          <ul style="list-style-type:disc;margin-top:.4em;margin-left:1.2em;">
+            <li>Which crucial steps are missing?</li>
+            <li>Is the conclusion trustworthy? Why or why not?</li>
+            <li>What additional analyses or diagnostics should be performed?</li>
+          </ul>
+        </li>
+        <li><strong>Key point:</strong> Statistical knowledge is required to detect incomplete reasoning, even when AI output appears valid.</li>
+      </ul>
+
+      <h3>Phase 5 – Reflection + Individual Mini-Analysis (15–20 minutes)</h3>
+      <div class="note"><strong>Purpose:</strong> Produce an individual deliverable that shows analysis, evaluation, and transparent AI use.</div>
+      <p>Students complete a short AI-integrated mini-analysis. They must include:</p>
+      <ul>
+        <li>Prompts used (with rationale)</li>
+        <li>AI output (summary)</li>
+        <li>Analysis of missing steps/errors</li>
+        <li>Evaluation of trustworthiness</li>
+        <li>Their own interpretation of the results</li>
+        <li>A transparency statement explaining how AI was used</li>
+      </ul>
+    </section>
+
+    <!-- Artifacts -->
+    <section id="artifacts">
+      <h2>Student Artifacts</h2>
+      <p><strong>AI-Integrated Mini Analysis Report (1–2 pages)</strong></p>
+      <ul>
+        <li>Dataset description</li>
+        <li>Prompts and reasoning</li>
+        <li>AI outputs</li>
+        <li>Identified missing steps or errors</li>
+        <li>Evaluation of trustworthiness</li>
+        <li>Human-written interpretation</li>
+        <li>Ethical documentation of AI use</li>
+      </ul>
+    </section>
+
+    <!-- Scoring -->
+    <section id="scoring">
+      <h2>Scoring Method</h2>
+      <p>In large data science courses, detailed rubrics are impractical. Instead, the instructor uses a <strong>3-point checklist scoring method</strong> aligned to the learning objectives.</p>
+
+      <h3>Checklist Criteria (0–3 points total)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Description</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Analysis</strong></td>
+            <td>Student identifies at least one missing assumption, incorrect step, or logical error in the AI-generated analysis.</td>
+            <td>0 or 1</td>
+          </tr>
+          <tr>
+            <td><strong>2. Evaluation</strong></td>
+            <td>Student makes a judgment about the reliability of the AI output and gives at least one justification.</td>
+            <td>0 or 1</td>
+          </tr>
+          <tr>
+            <td><strong>3. Transparency &amp; Interpretation</strong></td>
+            <td>Student documents prompts used and writes a human interpretation of results.</td>
+            <td>0 or 1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note"><strong>Grading Guide:</strong> 3 points → Full credit; 2 points → Partial credit; 0–1 point → Insufficient or incomplete submission.</p>
+    </section>
+
+    <!-- Faculty Guide -->
+    <section id="faculty">
+      <h2>Guidelines for Faculty</h2>
+
+      <h3>Before Class</h3>
+      <ul>
+        <li>Prepare the dataset and flawed AI analysis example.</li>
+        <li>Decide which AI tools students may use and any constraints.</li>
+        <li>Establish ethical and privacy guidelines for data use.</li>
+      </ul>
+
+      <h3>During Class</h3>
+      <ul>
+        <li>Emphasize reasoning, not code-writing.</li>
+        <li>Encourage students to critique AI outputs rather than copy them.</li>
+        <li>Model good prompting and verification habits.</li>
+      </ul>
+
+      <h3>After Class</h3>
+      <ul>
+        <li>Use the 3-point scoring checklist for rapid grading.</li>
+        <li>Provide general feedback to the class (common errors, strong examples).</li>
+        <li>Reinforce transparency, ethics, and reproducibility in data science workflows.</li>
+      </ul>
+    </section>
+
+    <!-- Students Guide -->
+    <section id="students">
+      <h2>Guidelines for Students</h2>
+
+      <h3>Use AI Responsibly</h3>
+      <ul>
+        <li>AI is a tool, not the analyst.</li>
+        <li>You must verify every step the AI performs.</li>
+      </ul>
+
+      <h3>Check Assumptions</h3>
+      <ul>
+        <li>AI may skip assumption tests or mishandle outliers.</li>
+        <li>Always inspect model assumptions yourself.</li>
+      </ul>
+
+      <h3>Be Transparent</h3>
+      <ul>
+        <li>Document all prompts and explain how AI contributed.</li>
+      </ul>
+
+      <h3>Interpret in Your Own Words</h3>
+      <ul>
+        <li>The explanation and final conclusions must be written by you, not AI.</li>
+      </ul>
+
+      <h3>Follow Ethical and Data Privacy Rules</h3>
+      <ul>
+        <li>Do not upload restricted data.</li>
+        <li>Cite AI use in your report.</li>
+      </ul>
+
+    </section>
+
+    <!-- References (APA) -->
+    <section id="references">
+      <h2>References</h2>
+      <ul>
+        <li>Schwarz, J. (2025). The use of generative AI in statistical data analysis and its impact on teaching statistics at universities of applied sciences. <em>Teaching Statistics, 47</em>(2), 118–128. https://doi.org/10.1111/test.12398</li>
+        <li>Shen, Y., Ai, X., Soosai Raj, A. G., Leo John, R. J., &amp; Syamkumar, M. (2024). Implications of chatgpt for data science education. In <em>Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1</em>, 1230–1236. https://doi.org/10.1145/3626252.3630874</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>Created for Data Science Foundations • AI-Enhanced Data Analysis Case</footer>
+</body>
+</html>
+
+
+
+
